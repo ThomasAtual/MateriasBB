@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f6fc">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Minha Trilha">
+  <title>Minha Trilha de Estudos</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Minha Trilha, início"><span class="brand-mark">✳</span><span>minha trilha</span></a>
+    <div class="top-actions"><span class="save-status" id="saveStatus">Progresso salvo</span><button class="theme-toggle" id="themeToggle" type="button" aria-label="Ativar tema escuro" title="Alternar tema"><span id="themeIcon" aria-hidden="true">☾</span></button><button class="icon-button" id="installHelp" title="Como adicionar à tela inicial" aria-label="Como adicionar à tela inicial">＋</button></div>
+  </header>
+  <main class="layout" id="inicio">
+    <aside class="sidebar">
+      <div class="side-heading"><div><p class="eyebrow">ÁREA DE ESTUDOS</p><h1>Suas matérias</h1></div><span class="subject-count" id="subjectCount">—</span></div>
+      <label class="search-wrap"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Buscar assunto" autocomplete="off"></label>
+      <nav id="subjectNav" aria-label="Matérias"></nav>
+      <div class="sidebar-note"><span class="note-icon">↗</span><p>Seu progresso fica salvo neste navegador.</p></div>
+    </aside>
+    <section class="content" aria-live="polite">
+      <div class="welcome-card" id="welcomeCard">
+        <div class="welcome-copy"><p class="eyebrow">✦ SUA CENTRAL DE ESTUDOS</p><h2>Estude no seu ritmo.</h2><p>Abra os PDFs na ordem do pacote, acompanhe os assuntos do sumário e registre seu progresso em cada etapa.</p><div class="welcome-stats"><div class="welcome-stat"><strong id="totalSubjects">9</strong><span>matérias</span></div><div class="welcome-stat"><strong id="totalPdfs">95</strong><span>PDFs</span></div><div class="welcome-stat"><strong id="totalTopics">2.189</strong><span>assuntos</span></div></div></div>
+        <div class="progress-visual" aria-hidden="true"><span>✳</span><i></i><i></i><i></i></div>
+      </div>
+      <div class="subject-header" id="subjectHeader" hidden>
+        <div><p class="eyebrow">SUA MATÉRIA</p><h2 id="subjectTitle"></h2><p class="subject-subtitle" id="subjectSubtitle"></p></div>
+        <div class="progress-card"><div class="progress-line"><span>Progresso</span><strong id="progressText">0%</strong></div><div class="progress-track"><span id="progressBar"></span></div><small id="progressCount"></small></div>
+      </div>
+      <div class="list-heading" id="listHeading" hidden><h3>PDFs e sumários</h3><span id="lessonCount"></span></div>
+      <div class="lesson-list" id="lessonList"></div>
+      <div class="empty-state" id="emptyState" hidden><span>⌕</span><h3>Nenhum assunto encontrado</h3><p>Tente buscar por outro nome.</p></div>
+      <footer>Feito para acompanhar a sua jornada, uma aula por vez.</footer>
+    </section>
+  </main>
+  <dialog id="helpDialog"><form method="dialog"><button class="dialog-close" aria-label="Fechar">×</button><p class="eyebrow">ACESSO RÁPIDO</p><h2>Adicione à tela inicial</h2><p>No Safari, toque em <strong>Compartilhar</strong> e escolha <strong>Adicionar à Tela de Início</strong>. Assim, a trilha fica com um ícone como um aplicativo.</p><button class="primary-button">Entendi</button></form></dialog>
+  <script src="materias.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>
+
